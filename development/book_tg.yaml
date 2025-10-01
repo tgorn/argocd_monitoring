@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: book_tg
+  name: booktg
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: book_tg-ui
+      app: booktg-ui
   template:
     metadata:
       labels:
-        app: book_tg-ui
+        app: booktg-ui
     spec:
       containers:
         - image: gcr.io/google-samples/gb-frontend:v5
-          name: book_tg-ui
+          name: booktg-ui
           ports:
             - containerPort: 80
